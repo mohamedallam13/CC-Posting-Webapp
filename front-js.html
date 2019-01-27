@@ -1,11 +1,95 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
+<script>
     
-  </body>
-</html>
-
-
+        document.addEventListener('DOMContentLoaded', function() {
+        //var Dropdown = document.querySelectorAll('select');
+        //var instances = M.FormSelect.init(Dropdown);  
+        //google.script.run.withSuccessHandler(populateDates).getCalendarBusyDays();
+        //var timePicker = document.querySelectorAll('.timepicker');
+        //var instances = M.Timepicker.init(timePicker);
+        
+        });
+        
+        document.getElementById("btn").addEventListener("click",logData)
+        document.getElementById("sID").addEventListener("input",retrieveData)
+        
+        //function populateDates(disabledDays){
+        
+        //var datePicker = document.querySelectorAll('.datepicker');
+        //var instances = M.Datepicker.init(datePicker,{disableDayFn: function(day){ return disabledDays.indexOf(day.valueOf()) > -1 || day.valueOf() < new Date().valueOf(); }});
+         //console.log(day) 
+        //return day.valueOf() === new Date("Wed Jan 23 2019 00:00:00 GMT+0100").valueOf() --> disables this specific day, the simple way to try it, the function above is more compicated but more dynamic
+            
+        //}
+        
+        function logData(){
+        
+        
+        //var uname =  document.getElementById("username").value
+        
+        var logInfo = {}
+        
+        logInfo.sID =  document.getElementById("sID").value
+        logInfo.inputer =  document.getElementById("out1").value
+        logInfo.inputdate =  document.getElementById("out2").value
+        logInfo.sID2 =  document.getElementById("out3").value
+        logInfo.purchasingcountry =  document.getElementById("out4").value
+       
+        //Logger.log(logInfo)
+        
+        //google.script.run.userClicked(logInfo);
+        
+        google.script.run.userClicked(logInfo);
+        
+        document.getElementById("sID").value =""
+        document.getElementById("out1").value =""
+        document.getElementById("out2").value =""
+        document.getElementById("out3").value =""
+        document.getElementById("out4").value =""
+        
+        M.updateTextFields();
+       
+        // to reset THIS dropdown
+       
+        
+        }
+        
+        
+        
+        function retrieveData(){
+        
+        var input = document.getElementById("sID").value;
+        
+        if(input.length === 7){
+        
+        google.script.run.withSuccessHandler(updateFields).getFromJSON(input);
+    
+        
+        }
+        
+        
+        function updateFields(result){
+        
+        //Logger.log(result)
+        
+        var obj = result[0]
+     
+        for(var i = 0; i < 4; i++){
+        
+        document.getElementById("out" + parseInt(i + 1)).value = obj[Object.keys(obj)[i]];
+        M.updateTextFields();
+        
+        }
+        
+    
+       
+     
+        
+        }
+        
+    
+        
+        
+        }
+        
+        
+         </script>
