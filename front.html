@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+    <base target="_top">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!--Let browser know website is optimized for mobile/Responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <?!= include("page-css"); ?><!--the "!" to evalute or execute the html, not treat it as just string-->
+
+</head>
+      
+<body>
+  
+    <div class="Container"><!--Open container-->
+    
+    <h1><?= title; ?></h1><!--no "!" to stops html code included in the string from being evaluated-->
+    
+        <div class="row">
+    
+            <div class="input-field col s4">
+                <input id="sID" type="text" class="validate">    
+                <label for="sID">Stock ID</label>
+            </div>
+    
+        </div>
+    
+        <div class="row"> <!--Open row-->
+    
+            <div class="input-field col s4">
+                <input disabled id="out1" type="text" class="validate">
+                <label class="active" for="out1">Inputer</label>
+            </div>
+    
+            <div class="input-field col s4">
+                <input disabled id="out2" type="text" class="validate">
+                <label class="active" for="out2">Input Date</label>
+            </div>
+    
+            <div class="input-field col s4">
+                <input disabled id="out3" type="text" class="validate">
+                <label class="active" for="out3">Stock ID</label>
+            </div>
+            
+            <div class="input-field col s4">
+                <input disabled id="out4" type="text" class="validate">
+                <label class="active" for="out3">Purchasing country</label>
+            </div>
+    
+        </div> <!--Close row-->
+
+    
+        <div class="row"> <!--Open row-->
+    
+            <button id="btn" class="waves-effect waves-light btn-small amber darken-3"><i class ="material-icons left">chevron_right</i>Clear</button>
+        
+        </div> <!--Close row-->
+    
+        <div class="loader"></div>
+    
+    </div> <!--Close container-->
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<?!= include("front-js"); ?>
+    
+    
+</body>
+</html>
+
+
