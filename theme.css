@@ -1,5 +1,5 @@
 .btn {
-background-color: DodgerBlue; /* Blue background */
+background-color: green; /* Blue background */
 border: none; /* Remove borders */
 color: white; /* White text */
 padding: 12px 16px; /* Some padding */
@@ -10,4 +10,27 @@ cursor: pointer; /* Mouse pointer on hover */
 /* Darker background on mouse-over */
 .btn:hover {
 background-color: RoyalBlue;
+}
+
+#btns
+{
+	float:left;
+}
+#content
+{
+  text-align:center;
+  margin: auto;
+  width: 50%;
+  border: 5px solid green;
+  padding: 10px 10px 10px 10px;
+}
+#confessions
+{
+	display:inline-block;
+	resize:none;
+}
+textarea
+{
+	height:600px;
+	width:600px;
 }
